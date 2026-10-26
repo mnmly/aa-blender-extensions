@@ -11,6 +11,8 @@ Requires Blender 4.3 or newer (BlenderGIS needs 4.3; Interface Tour alone works 
 
 ## Install
 
+Step-by-step with screenshots: **[docs/tutorial.md](docs/tutorial.md)**.
+
 1. *Edit > Preferences > System > Network*: tick **Allow Online Access**.
 2. *Get Extensions*: click **Repositories** (top right) > **+** > **Add Remote Repository**, and paste:
 
