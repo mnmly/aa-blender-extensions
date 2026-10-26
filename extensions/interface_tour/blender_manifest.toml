@@ -1,0 +1,15 @@
+schema_version = "1.0.0"
+
+id = "interface_tour"
+version = "1.1.0"
+name = "Interface Tour"
+tagline = "Step-by-step overlay explaining Blender's interface"
+maintainer = "Hiroaki Yamane"
+type = "add-on"
+website = "https://github.com/mnmly/aa-blender-extensions"
+
+blender_version_min = "4.2.0"
+
+license = ["SPDX:GPL-3.0-or-later"]
+
+tags = ["User Interface"]

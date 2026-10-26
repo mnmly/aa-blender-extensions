@@ -1,0 +1,51 @@
+# AA Blender extensions
+
+A Blender extension repository for AA workshops. Add it once and Blender installs and updates everything below from *Get Extensions*.
+
+| Extension | What it does |
+|---|---|
+| **Interface Tour** | Step-by-step overlays: *Help > Interface Tour* (the parts of the window) and *Help > Object Basics Tour* (select, move/rotate/scale, Properties tabs, viewport shading). |
+| **BlenderGIS** | Geographic data tools: basemaps, DEMs, OSM, QGIS projects. From [mnmly/BlenderGIS](https://github.com/mnmly/BlenderGIS) ([tutorial](https://github.com/mnmly/BlenderGIS/blob/master/docs/tutorial.md)). |
+
+Requires Blender 4.3 or newer (BlenderGIS needs 4.3; Interface Tour alone works from 4.2).
+
+## Install
+
+1. *Edit > Preferences > System > Network*: tick **Allow Online Access**.
+2. *Get Extensions*: click **Repositories** (top right) > **+** > **Add Remote Repository**, and paste:
+
+   ```
+   https://mnmly.github.io/aa-blender-extensions/index.json
+   ```
+
+   Tick **Check for Updates on Startup**, then **Create**.
+3. In *Get Extensions*, search for **Interface Tour** and **BlenderGIS** and click **Install** on each. Blender picks the right BlenderGIS build for Windows, macOS (Intel or Apple Silicon) or Linux.
+
+Updates show up in *Get Extensions* with an **Update** button. Restart Blender after updating BlenderGIS.
+
+Already installed BlenderGIS from its own repository or a zip? Uninstall it first, so you don't have two copies.
+
+## Using the Interface Tour
+
+Start it from *Help > Interface Tour* or *Help > Object Basics Tour*.
+
+| Key | Action |
+|---|---|
+| Right Arrow / Space / Enter, or **Next** | Next step |
+| Left Arrow / Backspace, or **Back** | Previous step |
+| M | Open the manual page for the step |
+| Esc | Exit |
+
+Other keys keep working during the tour, so students can try G, R, S and Z as they read. The Object Basics tour switches the Properties tab and viewport shading to match each step, and restores the viewport shading when it ends.
+
+## Maintaining
+
+- `extensions/<id>/`: one folder per extension, each with a `blender_manifest.toml`. Bump `version` there to publish an update.
+- `scripts/build_index.py`: zips every extension and writes `index.json`, merged with the entries of the upstream repositories listed in `UPSTREAM_INDEXES` (their archives stay hosted upstream).
+- `.github/workflows/publish.yml`: builds and deploys to GitHub Pages on every push to `main`, daily (to pick up new BlenderGIS releases), on demand (*Actions > Publish extension repository > Run workflow*), and on a `repository_dispatch` of type `upstream-release`.
+
+Build locally: `python scripts/build_index.py _site` (Python 3.11+), then serve `_site/` and add `http://localhost:<port>/index.json` as a repository.
+
+## License
+
+GPL-3.0-or-later. BlenderGIS is © domlysz and contributors, GPL-3.0-or-later.
