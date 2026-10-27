@@ -53,7 +53,7 @@ Other keys keep working during the tour, so students can try G, R, S and Z as th
 ## Maintaining
 
 - `extensions/<id>/`: one folder per extension, each with a `blender_manifest.toml`. Bump `version` there to publish an update.
-- `extensions/io_import_e57/` is copied from its development repo (`bl_e57_importer`, which has the tests). Change it there, then copy the three files over.
+- `extensions/io_import_e57/` is copied from [mnmly/blender-e57-point-cloud-lite](https://github.com/mnmly/blender-e57-point-cloud-lite), which has the tests. Change it there, then copy the three files over.
 - `scripts/build_index.py`: zips every extension and writes `index.json`, merged with the entries of the upstream repositories listed in `UPSTREAM_INDEXES` (their archives stay hosted upstream).
 - `.github/workflows/publish.yml`: builds and deploys to GitHub Pages on every push to `main`, daily (to pick up new BlenderGIS releases), on demand (*Actions > Publish extension repository > Run workflow*), and on a `repository_dispatch` of type `upstream-release`.
 
