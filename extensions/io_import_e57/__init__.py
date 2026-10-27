@@ -28,10 +28,10 @@ CONSUMED = set(CARTESIAN + SPHERICAL + COLORS + NORMALS) | {
 _INT32 = np.iinfo(np.int32)
 
 
-class IMPORT_SCENE_OT_e57(bpy.types.Operator, ImportHelper):
+class IMPORT_SCENE_OT_e57_lite(bpy.types.Operator, ImportHelper):
     """Import ASTM E57 point cloud scans"""
 
-    bl_idname = "import_scene.e57"
+    bl_idname = "import_scene.e57_lite"
     bl_label = "Import E57"
     bl_options = {"REGISTER", "UNDO", "PRESET"}
 
@@ -279,10 +279,10 @@ def color_material():
     return mat
 
 
-class IO_FH_e57(bpy.types.FileHandler):
-    bl_idname = "IO_FH_e57"
+class IO_FH_e57_lite(bpy.types.FileHandler):
+    bl_idname = "IO_FH_e57_lite"
     bl_label = "E57"
-    bl_import_operator = "import_scene.e57"
+    bl_import_operator = "import_scene.e57_lite"
     bl_file_extensions = ".e57"
 
     @classmethod
@@ -291,10 +291,10 @@ class IO_FH_e57(bpy.types.FileHandler):
 
 
 def menu_func_import(self, context):
-    self.layout.operator(IMPORT_SCENE_OT_e57.bl_idname, text="E57 Point Cloud (.e57)")
+    self.layout.operator(IMPORT_SCENE_OT_e57_lite.bl_idname, text="E57 Point Cloud (.e57)")
 
 
-classes = (IMPORT_SCENE_OT_e57, IO_FH_e57)
+classes = (IMPORT_SCENE_OT_e57_lite, IO_FH_e57_lite)
 
 
 def register():

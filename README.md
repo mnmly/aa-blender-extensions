@@ -6,9 +6,9 @@ A Blender extension repository for AA workshops. Add it once and Blender install
 |---|---|
 | **Interface Tour** | Step-by-step overlays: *Help > Interface Tour* (the parts of the window) and *Help > Object Basics Tour* (select, move/rotate/scale, Properties tabs, viewport shading). |
 | **BlenderGIS** | Geographic data tools: basemaps, DEMs, OSM, QGIS projects. From [mnmly/BlenderGIS](https://github.com/mnmly/BlenderGIS) ([tutorial](https://github.com/mnmly/BlenderGIS/blob/master/docs/tutorial.md)). |
-| **E57 Point Cloud Importer** | *File > Import > E57 Point Cloud (.e57)*, or drag an `.e57` laser scan into the viewport. Each scan becomes a point cloud object with its colors. Needs Blender 5.2. |
+| **E57 Point Cloud Lite** | *File > Import > E57 Point Cloud (.e57)*, or drag an `.e57` laser scan into the viewport. Each scan becomes a point cloud object with its colors. Needs Blender 5.2. |
 
-Requires Blender 4.3 or newer (BlenderGIS needs 4.3; Interface Tour alone works from 4.2). The E57 importer needs Blender 5.2 or newer; older versions don't list it.
+Requires Blender 4.3 or newer (BlenderGIS needs 4.3; Interface Tour alone works from 4.2). E57 Point Cloud Lite needs Blender 5.2 or newer; older versions don't list it.
 
 ## Install
 
@@ -22,7 +22,7 @@ Step-by-step with screenshots: **[docs/tutorial.md](docs/tutorial.md)**.
    ```
 
    Tick **Check for Updates on Startup**, then **Create**.
-3. In *Get Extensions*, search for **Interface Tour**, **BlenderGIS** and **E57 Point Cloud Importer** and click **Install** on each. Blender picks the right BlenderGIS build for Windows, macOS (Intel or Apple Silicon) or Linux.
+3. In *Get Extensions*, search for **Interface Tour**, **BlenderGIS** and **E57 Point Cloud Lite** and click **Install** on each. Blender picks the right BlenderGIS build for Windows, macOS (Intel or Apple Silicon) or Linux.
 
 Updates show up in *Get Extensions* with an **Update** button. Restart Blender after updating BlenderGIS.
 
@@ -41,7 +41,7 @@ Start it from *Help > Interface Tour* or *Help > Object Basics Tour*.
 
 Other keys keep working during the tour, so students can try G, R, S and Z as they read. The Object Basics tour switches the Properties tab and viewport shading to match each step, and restores the viewport shading when it ends.
 
-## Using the E57 importer
+## Using E57 Point Cloud Lite
 
 *File > Import > E57 Point Cloud (.e57)*, or drag the file into the 3D viewport. Each file becomes a collection, and each scan in it a point cloud object.
 
