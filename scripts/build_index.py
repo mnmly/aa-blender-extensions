@@ -20,6 +20,10 @@ EXTENSIONS = ROOT / "extensions"
 
 UPSTREAM_INDEXES = [
     "https://github.com/mnmly/BlenderGIS/releases/latest/download/index.json",
+    # COPC Renderer's per-platform zips (with native binaries) are release assets
+    # of this repository, under a versioned tag. Bump the tag here to publish an
+    # update (bl_copc_renderer: package_addon.py --index-url-base <release URL>).
+    "https://github.com/mnmly/aa-blender-extensions/releases/download/copc-renderer-v0.1.0/index.json",
 ]
 
 # Manifest keys that are copied into the index entry when present.
