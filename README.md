@@ -55,9 +55,9 @@ Other keys keep working during the tour, so students can try G, R, S and Z as th
 
 Open the 3D viewport sidebar (**N**) > **COPC** tab.
 
-- **Convert to COPC:** pick one or more scans (E57, LAS/LAZ, PLY, …). They convert in the background (progress in the status bar, **Esc** cancels) to `.copc.laz` files next to the originals, then load into the scene. The converter is built in; nothing else to install.
-- **Add COPC:** load existing `.copc.laz` files. Each cloud is an object you can move, rotate and hide.
+- **Add Point Cloud…:** pick one or more scans (E57, LAS/LAZ, PLY, …, or `.copc.laz`). Scans that aren't COPC yet convert once in the background (progress in the status bar, **Esc** cancels) to `.copc.laz` files next to the originals, then load; adding them again reuses those files. The converter is built in; nothing else to install. Each cloud is an object you can move, rotate and hide.
 - **Max Depth:** more depth shows more points (slower). **Reload** applies it.
+- **Convert to Point Cloud Object:** copies what a cloud shows (its Max Depth, after any Boolean cuts) into a regular Blender point cloud, for Geometry Nodes, materials and F12 renders in EEVEE or Cycles. Raise **Keep Every Nth Point** for big clouds; a few million points is comfortable.
 - **Boolean:** select one or more cutter meshes, make a cloud active (click it last), then **Difference** (remove the points inside) or **Intersect** (keep only those). Each cutter becomes a modifier on the cloud, so you can reorder, hide or remove it in the Modifier tab; the viewport updates as you move a cutter. **Apply (write COPC)** saves the cut cloud as a new file.
 - **Render Image / Animation**, also in the 3D view's **View** menu as *Viewport Render … (COPC)*: F12 renders and Blender's own Viewport Render don't show the points; these do. They render through the camera in camera view (Numpad 0), save to the output path, and open the folder. Meshes in front of a cloud hide the points behind it.
 - Scans exported without registration each sit at their scanner's origin. Converting keeps them that way, so align them in your scanning software (or by moving the objects).
